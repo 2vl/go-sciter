@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/sciter-sdk/go-sciter"
-	"github.com/sciter-sdk/go-sciter/window"
+	"github.com/wj008/go-sciter"
+	"github.com/wj008/go-sciter/window"
 )
 
 func main() {
