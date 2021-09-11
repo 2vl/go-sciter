@@ -1,6 +1,9 @@
 #include <sciter-x.h>
 
 // getting ISciterAPI reference:
+const char * SCITER_DLL_PATH = SCITER_DLL_NAME;
+
+// getting ISciterAPI reference:
 
 #if defined(STATIC_LIB) || defined(SCITER_BUILD)
 
