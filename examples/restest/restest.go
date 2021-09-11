@@ -1,12 +1,14 @@
 package main
 
 import (
+	"embed"
 	sciter "github.com/wj008/go-sciter"
-	res "github.com/wj008/go-sciter/res"
+	resx "github.com/wj008/go-sciter/resx"
 	window "github.com/wj008/go-sciter/window"
 	"log"
 )
-
+//go:embed res/*
+var f embed.FS
 /*
 A go.rice usage example.
 
@@ -27,10 +29,9 @@ func main() {
 
 	// 1. Handle resources via sciter.rice loader.
 	// It handles URLs like `file://box/` and `rice://box/`.
-	res.HandleDataLoad(w.Sciter)
-
+	resx.HandleDataLoad(w.Sciter)
 	// 3. Load a packaged resource.
-	err = w.LoadFile("res://html/simple.html")
+	err = w.LoadFile("resx://res/simple.html")
 	if err != nil {
 		log.Fatal(err)
 	}
