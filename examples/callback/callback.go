@@ -1,11 +1,10 @@
 package main
 
 import (
-	"log"
-	"path/filepath"
-
 	"github.com/wj008/go-sciter"
 	"github.com/wj008/go-sciter/window"
+	"log"
+	"path/filepath"
 )
 
 func main() {
@@ -13,6 +12,7 @@ func main() {
 	if err != nil {
 		log.Fatal("Create Window Error: ", err)
 	}
+	sciter.SetOption(sciter.SCITER_SET_DEBUG_MODE, 1)
 	fullpath, err := filepath.Abs("index.html")
 	if err != nil {
 		log.Fatal(err)
