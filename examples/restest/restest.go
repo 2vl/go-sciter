@@ -1,9 +1,8 @@
 package main
 
 import (
-	tool "github.com/GeertJohan/go.rice"
 	sciter "github.com/wj008/go-sciter"
-	rice "github.com/wj008/go-sciter/rice"
+	res "github.com/wj008/go-sciter/res"
 	window "github.com/wj008/go-sciter/window"
 	"log"
 )
@@ -28,13 +27,10 @@ func main() {
 
 	// 1. Handle resources via sciter.rice loader.
 	// It handles URLs like `file://box/` and `rice://box/`.
-	rice.HandleDataLoad(w.Sciter)
-
-	// 2. A dummy call to allow `go.rice` to package and register that folder.
-	tool.MustFindBox("res")
+	res.HandleDataLoad(w.Sciter)
 
 	// 3. Load a packaged resource.
-	err = w.LoadFile("rice://res/simple.html")
+	err = w.LoadFile("res://html/simple.html")
 	if err != nil {
 		log.Fatal(err)
 	}
