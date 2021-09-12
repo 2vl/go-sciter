@@ -46,7 +46,7 @@ struct SCITER_X_MSG;
 #else 
   #define SCITER_API_VERSION 9
 #endif
-#define HWINDOW_PTR HWINDOW*
+
 typedef struct _ISciterAPI {
 
   UINT    version; // API_VERSION
@@ -300,5 +300,5 @@ typedef struct _ISciterAPI {
 } ISciterAPI;
 
 typedef ISciterAPI* (SCAPI *SciterAPI_ptr)();
-
+#define HWINDOW_PTR HWINDOW*
 #endif
